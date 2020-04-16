@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "experimentalDecorators": true,
+    "strict": true,
+    "target": "es5",
+    "esModuleInterop": false
+  }
+}

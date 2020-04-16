@@ -1,0 +1,22 @@
+version: '3.7'
+services: 
+    client:
+        build: 
+            dockerfile: Dockerfile.dev
+            context: ./client
+        ports: 
+            - "80:3000"
+        volumes: 
+            - ./client:/app 
+        stdin_open: true
+        environment:
+            - CHOKIDAR_USEPOLLING=true
+    server:
+        build: 
+            dockerfile: Dockerfile.dev
+            context: ./server 
+        volumes: 
+            - ./server:/app 
+        ports: 
+            - "3001:3001"
+        
