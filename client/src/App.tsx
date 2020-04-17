@@ -22,7 +22,7 @@ const App = () => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn Reactsdf
+          Learn React
         </a>
       </header>
     </div>
