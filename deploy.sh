@@ -9,4 +9,4 @@ docker push romanbeloborodov/gpserver:$SHA
 
 kubectl apply -f k8s
 kubectl set image deployments/server-deployment server=romanbeloborodov/gpserver:$SHA
-kubectl set image deployments/client-deployment server=romanbeloborodov/gpclient:$SHA
+kubectl set image deployments/client-deployment client=romanbeloborodov/gpclient:$SHA
