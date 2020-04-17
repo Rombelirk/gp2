@@ -1,13 +1,15 @@
-FROM node:13.12.0-alpine 
+FROM node
 
 WORKDIR /app
 
 COPY package.json ./
 COPY package-lock.json ./
 RUN npm install
-RUN npm run build
-
 COPY . ./
+
+RUN npm run tsc
+
+
 
 CMD ["npm", "run", "prod"]
 EXPOSE 3001
