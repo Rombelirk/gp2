@@ -8,7 +8,7 @@ var apollo_server_express_1 = require("apollo-server-express");
 var schema_1 = __importDefault(require("./schema/schema"));
 var resolvers_1 = __importDefault(require("./resolvers/resolvers"));
 var mongoose_1 = __importDefault(require("mongoose"));
-var _a = process.env, DBAUTH = _a.DBAUTH, DBHOST = _a.DBHOST, DBNAME = _a.DBNAME, DBPORT = _a.DBPORT;
+var DBHOST = process.env.DBHOST;
 var app = express_1.default();
 var server = new apollo_server_express_1.ApolloServer({
     typeDefs: schema_1.default,
@@ -16,7 +16,7 @@ var server = new apollo_server_express_1.ApolloServer({
 });
 server.applyMiddleware({ app: app, path: '/graphql' });
 mongoose_1.default
-    .connect("mongodb://mongo:27017/projectdb", {
+    .connect("mongodb://" + DBHOST + ":27017/projectdb", {
     useNewUrlParser: true,
 })
     .then(function () {

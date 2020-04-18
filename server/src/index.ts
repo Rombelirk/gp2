@@ -5,7 +5,7 @@ import resolvers from './resolvers/resolvers'
 import mongoose from 'mongoose'
 
 
-const { DBAUTH, DBHOST, DBNAME, DBPORT } = process.env
+const { DBHOST } = process.env
 
 const app: Application = express()
 
@@ -16,7 +16,7 @@ const server = new ApolloServer({
 server.applyMiddleware({ app, path: '/graphql' })
 
 mongoose
-    .connect(`mongodb://mongo:27017/projectdb`, {
+    .connect(`mongodb://${DBHOST}:27017/projectdb`, {
         useNewUrlParser: true,
     })
     .then(() => {

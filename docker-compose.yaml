@@ -12,6 +12,8 @@ services:
         environment:
             - CHOKIDAR_USEPOLLING=true
     server:
+        environment: 
+            - DBHOST=mongo
         depends_on:
             - mongo
         build: 

@@ -12,7 +12,7 @@ var signupResolver = function (a, args, c) {
     var user = new User_1.default({ login: args.url });
     return user.save().then(function (res) {
         console.log(res);
-        return res.login;
+        return "res.login";
     });
 };
 var Query = {
