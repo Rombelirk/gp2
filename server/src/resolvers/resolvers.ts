@@ -11,7 +11,7 @@ const signupResolver:IFieldResolver<any,any,{url: string}> = (a,args,c) => {
     const user = new User({login: args.url})
     return user.save().then(res => {
         console.log(res)
-        return res.login
+        return "res.login"
     })
     
 }
