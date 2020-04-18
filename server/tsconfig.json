@@ -5,6 +5,6 @@
     "experimentalDecorators": true,
     "strict": true,
     "target": "es5",
-    "esModuleInterop": false
+    "esModuleInterop": true
   }
 }
