@@ -1,19 +1,13 @@
 import express, { Application } from 'express'
-import { ApolloServer, ResolveType, ApolloServerExpressConfig, Config } from 'apollo-server-express'
-import schema from './schema/schema'
-import resolvers from './resolvers/resolvers'
 import mongoose from 'mongoose'
+import server from './apollo/apollo.module'
 
 
 const { DBHOST } = process.env
 
 const app: Application = express()
 
-const server = new ApolloServer({
-    typeDefs: schema,
-    resolvers,
-})
-server.applyMiddleware({ app, path: '/graphql' })
+server.applyMiddleware({ app, path: '/' })
 
 mongoose
     .connect(`mongodb://${DBHOST}:27017/projectdb`, {
