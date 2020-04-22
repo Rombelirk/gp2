@@ -17,7 +17,6 @@ export const createBuyOrder: IFieldResolver<
     const { price, stockId } = input
     const order = new BuyOrder({ stock: stockId, price })
     await order.save()
-    console.log(order)
     return order
 }
 

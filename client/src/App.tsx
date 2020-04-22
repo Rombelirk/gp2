@@ -5,7 +5,6 @@ import './App.css';
 //test
 const App = () => {
   useEffect(() => {
-    console.log(1)
     axios.get('/api').then(res => console.log(res))
     
   },[])
